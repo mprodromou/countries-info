@@ -5,6 +5,12 @@ body {
   color: var(--ci-body-text-color);
   background-color: var(--ci-body-background);
   line-height: 1;
+
+  &.dark-theme {
+    --ci-body-text-color: var(--ci-dm-text);
+    --ci-body-background: var(--ci-dm-bg);
+    --ci-elements-color: var(--ci-dm-elements);
+  }
 }
 
 html, body {

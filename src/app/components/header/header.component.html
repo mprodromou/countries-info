@@ -4,16 +4,18 @@
 
     <div class="header__theme-switcher">
       <button
+        class="header__theme-btn"
         mat-flat-button
         (click)="toggleTheme()"
       >
-        <mat-icon aria-hidden="false" aria-label="Toggle dark mode">dark_mode</mat-icon>
-        Dark mode
+        <mat-icon *ngIf="themeMode === themeOptions.dark" aria-hidden="false" aria-label="Toggle dark mode">dark_mode</mat-icon>
+        <mat-icon *ngIf="themeMode === themeOptions.light"aria-hidden="false" aria-label="Toggle dark mode">light_mode</mat-icon>
+        {{themeMode}} mode
       </button>
     </div>
 
 
-    <!--  <mat-icon aria-hidden="false" aria-label="Toggle dark mode">light_mode</mat-icon>-->
+
   </mat-toolbar>
 </div>
 
