@@ -34,9 +34,21 @@
   --ci-baseFontSize: 1.7rem;
 
 
+  --ci-scaler: 4vw;
+  --ci-h5: 2.5rem; // 25px
+  --ci-h6: 2rem; // 20px
+  --ci-paragraph: 1.7rem; // 17px
+  --ci-small-text: 1.4rem; // 14px
+
+
   /* Font-weights */
 
   --ci-fw-regular: 300;
-  --tp-fw-medium: 600;
-  --tp-fw-bold: 800;
+  --ci-fw-medium: 600;
+  --ci-fw-bold: 800;
+
+  --ci-color-transition: background-color 150ms cubic-bezier(0.76, 0.36, 0.38, 0.9);
+
+  --tp-transparent-level-08: rgba(0, 0, 0, 0.08);
+  --ci-shadow-08: 0px 0.2rem 2rem var(--tp-transparent-level-08);
 }

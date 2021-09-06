@@ -5,6 +5,7 @@ body {
   color: var(--ci-body-text-color);
   background-color: var(--ci-body-background);
   line-height: 1;
+  transition: var(--ci-color-transition);
 
   &.dark-theme {
     --ci-body-text-color: var(--ci-dm-text);
