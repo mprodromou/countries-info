@@ -1,0 +1,12 @@
+.header {
+  background-color: var(--ci-elements-color);
+
+  &__heading {
+
+  }
+
+  &__toolbar {
+    background-color: var(--ci-elements-color);
+    justify-content: space-between;
+  }
+}
