@@ -1,0 +1,54 @@
+:root {
+
+  /* Font size calculations */
+  font-size: 62.5%;
+
+
+  /* Colors Definition: */
+  --ci-blue-1: hsl(209, 23%, 22%);
+  --ci-blue-2: hsl(207, 26%, 17%);
+  --ci-blue-3: hsl(200, 15%, 8%);
+  --ci-gray-1: hsl(0, 0%, 98%);
+  --ci-gray-2: hsl(0, 0%, 52%);
+  --ci-white: hsl(0, 0%, 100%);
+
+
+  /* Define Color Intentions */
+
+  // Dark mode
+  --ci-dm-elements: var(--ci-blue-1);
+  --ci-dm-bg: var(--ci-blue-2);
+  --ci-dm-text: var(--ci-white);
+
+  // Light mode
+  --ci-lm-elements: var(--ci-white);
+  --ci-lm-bg: var(--ci-gray-1);
+  --ci-lm-text: var(--ci-blue-3);
+
+  // Set to light mode initially
+  --ci-body-background: var(--ci-lm-bg);
+  --ci-body-text-color: var(--ci-lm-text);
+  --ci-elements-color: var(--ci-lm-elements);
+
+  --ci-bodyFont: 'Manrope', sans-serif;
+  --ci-baseFontSize: 1.7rem;
+
+
+  --ci-scaler: 4vw;
+  --ci-h5: 2.5rem; // 25px
+  --ci-h6: 2rem; // 20px
+  --ci-paragraph: 1.7rem; // 17px
+  --ci-small-text: 1.4rem; // 14px
+
+
+  /* Font-weights */
+
+  --ci-fw-regular: 300;
+  --ci-fw-medium: 600;
+  --ci-fw-bold: 800;
+
+  --ci-color-transition: background-color 150ms cubic-bezier(0.76, 0.36, 0.38, 0.9);
+
+  --tp-transparent-level-08: rgba(0, 0, 0, 0.08);
+  --ci-shadow-08: 0px 0.2rem 2rem var(--tp-transparent-level-08);
+}

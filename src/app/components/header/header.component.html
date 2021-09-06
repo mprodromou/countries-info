@@ -1,0 +1,21 @@
+<div class="header">
+  <mat-toolbar class="header__toolbar ci-container">
+    <h1 class="header__heading">Where in the world?</h1>
+
+    <div class="header__theme-switcher">
+      <button
+        class="header__theme-btn"
+        mat-flat-button
+        (click)="toggleTheme()"
+      >
+        <mat-icon *ngIf="themeMode === themeOptions.dark" aria-hidden="false" aria-label="Toggle dark mode">dark_mode</mat-icon>
+        <mat-icon *ngIf="themeMode === themeOptions.light"aria-hidden="false" aria-label="Toggle dark mode">light_mode</mat-icon>
+        {{themeMode}} mode
+      </button>
+    </div>
+
+
+
+  </mat-toolbar>
+</div>
+

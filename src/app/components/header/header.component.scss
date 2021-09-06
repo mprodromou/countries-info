@@ -1,0 +1,23 @@
+.header {
+  background-color: var(--ci-elements-color);
+  transition: var(--ci-color-transition);
+  box-shadow: var(--ci-shadow-08);
+
+  &__heading {
+    color: var(--ci-body-text-color);
+    font-size: clamp(var(--ci-h6), var(--ci-scaler), var(--ci-small-text)); // 25px - 17px
+    line-height: 1.2;
+    font-weight: var(--ci-fw-medium);
+  }
+
+  &__toolbar {
+    background-color: var(--ci-elements-color);
+    transition: var(--ci-color-transition);
+    justify-content: space-between;
+  }
+
+  &__theme-btn {
+    color: var(--ci-body-text-color);
+    background-color: transparent;
+  }
+}
