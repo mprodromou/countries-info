@@ -24,6 +24,7 @@ export interface CountryInfo {
   topLevelDomain: string[];
   currencies: CountryCurrency[];
   languages: CountryLanguage[];
+  flag: string;
 }
 
 @Injectable({
@@ -33,7 +34,8 @@ export class RestCountriesApiService {
 
   private readonly apiUrlBase = 'https://restcountries.eu/rest/v2/';
 
-  public countriesInfo!: CountryInfo[];
+  private countriesInfo: BehaviorSubject<CountryInfo[]> = new BehaviorSubject<CountryInfo[]>([]);
+  public countriesInfoState = this.countriesInfo.asObservable();
 
   private fetchingData: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public fetchingDataState = this.fetchingData.asObservable();
@@ -57,13 +59,14 @@ export class RestCountriesApiService {
               topLevelDomain: country.topLevelDomain,
               currencies: country.currencies,
               languages: country.languages,
+              flag: country.flag,
             })
           });
           return countryArray;
         })
       )
       .subscribe((data: CountryInfo[]) => {
-        this.countriesInfo = data;
+        this.countriesInfo.next(data);
         this.setFetchingDataState(false);
     })
   }
