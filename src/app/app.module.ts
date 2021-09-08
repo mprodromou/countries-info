@@ -8,11 +8,20 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from '@angular/material/button';
+import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './components/home/home.component';
+import { DetailsComponent } from './components/details/details.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import { CountryCardComponent } from './components/country-card/country-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    DetailsComponent,
+    CountryCardComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +30,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

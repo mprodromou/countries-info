@@ -1,0 +1,24 @@
+<section class="countries-grid">
+  <div class="countries-grid__inner">
+    <div class="ci-container">
+
+      <div class="countries-grid__tools">
+        <form class="search-form">
+          <mat-form-field class="countries-grid__search-field" appearance="fill">
+            <mat-label>Search for country...</mat-label>
+            <input matInput placeholder="Ex. Cyprus">
+          </mat-form-field>
+        </form>
+
+        <div class="region-dropdown">
+          Dropdown here
+        </div>
+      </div>
+
+      <div class="countries-grid__grid">
+        <app-country-card *ngFor="let country of countriesArray" [countryInfo]="country"></app-country-card>
+      </div>
+
+    </div>
+  </div>
+</section>

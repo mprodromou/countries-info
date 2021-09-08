@@ -1,0 +1,21 @@
+.countries-grid {
+  padding: clamp(2rem, 4vw, 6rem) 0;
+
+  &__inner {
+
+  }
+
+  &__tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__grid {
+    --cardWidth: 20rem;
+    --colGap: 5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--cardWidth), 100%), 1fr));
+    gap: var(--colGap);
+  }
+}

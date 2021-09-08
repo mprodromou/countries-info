@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 
   public toggleTheme() {
     let optionToSet = this.themeMode === ThemeOptions.light ? ThemeOptions.dark : ThemeOptions.light;
-    console.log(optionToSet)
     this.themeService.setThemeMode(optionToSet);
   }
 
