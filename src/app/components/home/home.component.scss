@@ -12,7 +12,7 @@
   }
 
   &__grid {
-    --cardWidth: 17rem;
+    --cardWidth: 20rem;
     --colGap: 5rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--cardWidth), 100%), 1fr));
