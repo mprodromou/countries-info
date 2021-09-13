@@ -3,16 +3,38 @@
     <h1 class="header__heading">Where in the world?</h1>
 
     <div class="header__theme-switcher">
-      <button
-        class="header__theme-btn"
-        mat-flat-button
-        (click)="toggleTheme()"
-      >
-        <mat-icon *ngIf="themeMode === themeOptions.dark" aria-hidden="false" aria-label="Toggle dark mode">dark_mode</mat-icon>
-        <mat-icon *ngIf="themeMode === themeOptions.light"aria-hidden="false" aria-label="Toggle dark mode">light_mode</mat-icon>
-        {{themeMode}} mode
-      </button>
+<!--      <button-->
+<!--        class="header__theme-btn"-->
+<!--        mat-flat-button-->
+<!--        (click)="toggleTheme()"-->
+<!--      >-->
+<!--        <mat-icon *ngIf="themeMode === themeOptions.dark" aria-hidden="false" aria-label="Toggle dark mode">dark_mode</mat-icon>-->
+<!--        <mat-icon *ngIf="themeMode === themeOptions.light"aria-hidden="false" aria-label="Toggle dark mode">light_mode</mat-icon>-->
+<!--        {{themeMode}} mode-->
+<!--      </button>-->
+
+
     </div>
+
+    <button
+      #themeToggler
+      id="theme-toggle"
+      class="header__theme-btn"
+      [class.light-theme]="themeMode === themeOptions.light"
+      [class.dark-theme]="themeMode === themeOptions.dark"
+      aria-label="Switch to dark theme"
+      (click)="toggleTheme()"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 472.39 472.39">
+        <g class="toggle-sun" [class.light-theme]="themeMode === themeOptions.light">
+          <path d="M403.21,167V69.18H305.38L236.2,0,167,69.18H69.18V167L0,236.2l69.18,69.18v97.83H167l69.18,69.18,69.18-69.18h97.83V305.38l69.18-69.18Zm-167,198.17a129,129,0,1,1,129-129A129,129,0,0,1,236.2,365.19Z" />
+        </g>
+        <g class="toggle-circle" [class.light-theme]="themeMode === themeOptions.light">
+          <circle class="cls-1" cx="236.2" cy="236.2" r="103.78" />
+        </g>
+      </svg>
+
+    </button>
 
   </mat-toolbar>
 </div>
