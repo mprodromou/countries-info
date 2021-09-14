@@ -1,0 +1,35 @@
+.theme-toggle-btn {
+  color: var(--ci-body-text-color);
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  opacity: 0.8;
+  padding: .5rem;
+  border-radius: 50%;
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: hsl(0 0% 50% / 0.2);
+    border-radius: inherit;
+    transform: scale(0);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    opacity: 1;
+    background: hsl(0 0% 50% / 0.15);
+  }
+
+  &__sun {
+    transform-origin: center center;
+  }
+
+}
+

@@ -14,6 +14,8 @@ import { DetailsComponent } from './components/details/details.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import { CountryCardComponent } from './components/country-card/country-card.component';
+import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { CountryCardComponent } from './components/country-card/country-card.com
     HeaderComponent,
     HomeComponent,
     DetailsComponent,
-    CountryCardComponent
+    CountryCardComponent,
+    ThemeToggleComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { CountryCardComponent } from './components/country-card/country-card.com
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
