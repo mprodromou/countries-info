@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ThemeOptions, ThemeSwitcherService} from '../../services/theme-switcher.service';
 
 @Component({
@@ -7,20 +7,10 @@ import {ThemeOptions, ThemeSwitcherService} from '../../services/theme-switcher.
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public themeOptions = ThemeOptions;
-  public themeMode = ThemeOptions.light;
-
-  constructor(private themeService: ThemeSwitcherService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.themeService.themeModeState.subscribe( (state: ThemeOptions) => {
-      this.themeMode = state;
-    });
   }
 
-  public toggleTheme() {
-    let optionToSet = this.themeMode === ThemeOptions.light ? ThemeOptions.dark : ThemeOptions.light;
-    this.themeService.setThemeMode(optionToSet);
-  }
 
 }

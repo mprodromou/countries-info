@@ -18,6 +18,14 @@ export class ThemeSwitcherService {
 
   public setThemeMode(themeOption: ThemeOptions) {
     this.themeMode.next(themeOption);
-    document.body.classList.toggle("dark-theme");
+    if (themeOption === ThemeOptions.dark) {
+      document.body.classList.add("dark-theme");
+      document.body.classList.remove("light-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+      document.body.classList.add("light-theme");
+    }
+
+
   }
 }
