@@ -16,6 +16,7 @@ import {MatInputModule} from "@angular/material/input";
 import { CountryCardComponent } from './components/country-card/country-card.component';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { MatTooltipModule } from "@angular/material/tooltip";
+import {SkeletonLoaderModule} from "./skeleton-loader/skeleton-loader.module";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatFormFieldModule,
     MatInputModule,
     MatTooltipModule,
+    SkeletonLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
