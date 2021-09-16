@@ -9,6 +9,7 @@ import {CountryInfo} from "../../services/rest-countries-api.service";
 export class CountryCardComponent implements OnInit {
 
   @Input() countryInfo!: CountryInfo;
+  @Input() loading = false;
 
   constructor() { }
 

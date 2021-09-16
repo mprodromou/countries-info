@@ -19,3 +19,17 @@
     gap: var(--colGap);
   }
 }
+
+.loading-card {
+  box-shadow: var(--ci-shadow-08);
+  border-radius: 5px;
+  background: var(--ci-elements-color);
+
+  &__content {
+    padding: 3rem;
+    & > * {
+      margin-bottom: 10px;
+      display: block;
+    }
+  }
+}

@@ -27,6 +27,8 @@ export interface CountryInfo {
   flag: string;
 }
 
+export const SEARCH_REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+
 @Injectable({
   providedIn: 'root'
 })

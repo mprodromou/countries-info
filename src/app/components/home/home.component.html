@@ -15,9 +15,28 @@
         </div>
       </div>
 
-      <div class="countries-grid__grid">
-        <app-country-card *ngFor="let country of countriesArray" [countryInfo]="country"></app-country-card>
+      <div *ngIf="!fetchingData; else loadingGrid" class="countries-grid__grid">
+        <app-country-card
+          *ngFor="let country of countriesArray"
+          [countryInfo]="country"
+        ></app-country-card>
       </div>
+
+      <ng-template #loadingGrid>
+        <div class="countries-grid__grid">
+          <div
+            *ngFor="let index of [].constructor(loadingCardsAmount)"
+            class="loading-card">
+            <app-skeleton-loader [height]="150" ></app-skeleton-loader>
+            <div class="loading-card__content">
+              <app-skeleton-loader [height]="20" ></app-skeleton-loader>
+              <app-skeleton-loader [height]="17" ></app-skeleton-loader>
+              <app-skeleton-loader [height]="17" ></app-skeleton-loader>
+              <app-skeleton-loader [height]="17" ></app-skeleton-loader>
+            </div>
+          </div>
+        </div>
+      </ng-template>
 
     </div>
   </div>
