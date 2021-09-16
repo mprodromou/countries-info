@@ -1,0 +1,45 @@
+:root {
+  --menu-min-width: 200px;
+}
+
+.region-dropdown {
+  background-color: var(--ci-elements-color);
+  border-radius: 4px;
+  min-width: var(--menu-min-width);
+
+  &__button {
+    padding: 1rem 1.5rem !important;
+    width: 100%;
+
+    .mat-button-wrapper {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+  }
+
+  &__icon {
+    transition: transform .3s ease-in-out;
+
+    &--rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__menu {
+    min-width: var(--menu-min-width) !important;
+    margin-top: 5px;
+    background-color: var(--ci-elements-color);
+
+    .mat-menu-content {
+      padding: 0 !important;
+    }
+
+    &-option {
+      height: 35px !important;
+      display: flex !important;
+      align-items: center;
+      color: var(--ci-body-text-color);
+    }
+  }
+}

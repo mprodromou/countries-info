@@ -4,20 +4,38 @@
 
       <div class="countries-grid__tools">
         <form class="search-form">
-          <mat-form-field class="countries-grid__search-field" appearance="fill">
-            <mat-label>Search for country...</mat-label>
-            <input matInput placeholder="Ex. Cyprus">
+          <mat-form-field class="countries-grid__search-field" appearance="fill" >
+            <mat-label>Search for a country...</mat-label>
+            <input matInput placeholder="Ex. Cyprus" autocomplete="false" type="text">
           </mat-form-field>
         </form>
 
         <div class="region-dropdown">
-          Dropdown here
+          <button
+            mat-button
+            class="region-dropdown__button"
+            [matMenuTriggerFor]="regionMenu"
+            (onMenuOpen)="setMenuStatus(true)"
+            (onMenuClose)="setMenuStatus(false)"
+            [matTooltip]="'Filter by region'"
+          >
+            {{ selectedRegion}}
+            <mat-icon class="region-dropdown__icon" [class.region-dropdown__icon--rotated]="menuIsOpen">expand_more</mat-icon>
+          </button>
+          <mat-menu #regionMenu="matMenu" class="region-dropdown__menu">
+            <button
+              *ngFor="let region of searchRegions"
+              class="region-dropdown__menu-option"
+              mat-menu-item
+              (click)="setSelectedRegion(region)"
+            >{{region}}</button>
+          </mat-menu>
         </div>
       </div>
 
       <div *ngIf="!fetchingData; else loadingGrid" class="countries-grid__grid">
         <app-country-card
-          *ngFor="let country of countriesArray"
+          *ngFor="let country of filteredCountriesArray"
           [countryInfo]="country"
         ></app-country-card>
       </div>

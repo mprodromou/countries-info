@@ -10,11 +10,14 @@ import {Subscription} from "rxjs";
 export class HomeComponent implements OnInit, OnDestroy {
 
   public countriesArray!: CountryInfo[];
+  public filteredCountriesArray!: CountryInfo[];
   public fetchingData = false;
   public subscriptions = new Subscription();
   public readonly loadingCardsAmount = 20;
 
   public readonly searchRegions = SEARCH_REGIONS;
+  public selectedRegion = 'All regions';
+  public menuIsOpen = false;
 
   constructor(private countriesAPIS: RestCountriesApiService) { }
 
@@ -22,6 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.countriesAPIS.countriesInfoState.subscribe( (countriesArray: CountryInfo[]) => {
         this.countriesArray = countriesArray;
+        this.filterEntries();
       })
     );
 
@@ -35,5 +39,34 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }
+
+  public setMenuStatus(status: boolean) {
+    this.menuIsOpen = status;
+  }
+
+  public setSelectedRegion(region: string) {
+    this.selectedRegion = region;
+    this.filterEntries();
+  }
+
+  public filterEntries(){
+    const unfilteredEntries = [...this.countriesArray];
+
+    let filteredEntries = this.filterByRegion(unfilteredEntries);
+
+    this.filteredCountriesArray = filteredEntries;
+
+  }
+
+  public filterByRegion(entries: CountryInfo[]){
+    if (this.selectedRegion === 'All regions') {
+      return entries;
+    }
+    else {
+      return entries.filter(entry => entry.region === this.selectedRegion);
+    }
+
+  }
+
 
 }
